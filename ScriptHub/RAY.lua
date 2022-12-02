@@ -18,7 +18,7 @@ local cleancooldown = 0
 local triggerpercent = 50
 
 local Window = Rayfield:CreateWindow({
-   Name = "General Script | XYZSkriptz Hub",
+   Name = "Raise A Yippee | XYZSkriptz Hub",
    LoadingTitle = "XYZSkriptz Hub",
    LoadingSubtitle = "by XYZSkriptz",
    ConfigurationSaving = {
