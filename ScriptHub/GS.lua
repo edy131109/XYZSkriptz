@@ -178,13 +178,15 @@ local CreditsSection = CreditsTab:CreateSection("Credits")
 local CreditLabel = CreditsTab:CreateLabel("by edy")
 local CreditsLabel = CreditsTab:CreateLabel("from XYZSkriptz")
 
+Rayfield:LoadConfiguration()
+
 while true do
     player = game.Players.LocalPlayer
     character = player.Character
     
     for _, v in pairs(character:GetDescendants()) do
         pcall(function()
-            if v:IsA("BasePart") then
+            if v.Name == "Head" or v.Name == "Torso" then
                 v.CanCollide = not noclip
             end
         end)
@@ -192,5 +194,3 @@ while true do
     
     game:GetService("RunService").Stepped:wait()
 end
-
-Rayfield:LoadConfiguration()
