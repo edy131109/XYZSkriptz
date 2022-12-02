@@ -24,7 +24,7 @@ local Window = Rayfield:CreateWindow({
    ConfigurationSaving = {
       Enabled = true,
       FolderName = "XYZSkriptzHub", -- Create a custom folder for your hub/game
-      FileName = "GS"
+      FileName = "RAY"
    },
    Discord = {
       Enabled = true,
@@ -38,8 +38,8 @@ local Window = Rayfield:CreateWindow({
       Note = "Join the discord for key (discord.gg/gTKwY3pZxJ)",
       FileName = "XYZKey",
       SaveKey = true,
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "XYZHubFREE"
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = "https://pastebin.com/raw/6ayTjic6"
    }
 })
 
