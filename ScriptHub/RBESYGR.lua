@@ -104,6 +104,7 @@ local JumpSlider = MainTab:CreateSlider({
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
    end,
 })
+local InfoLabel = Tab:CreateLabel("Please disable popups in the game's settings.")
 
 local CreditsTab = Window:CreateTab("Credits") -- Title, Image
 local CreditsSection = CreditsTab:CreateSection("Credits")
