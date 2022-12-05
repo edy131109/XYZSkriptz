@@ -1,4 +1,4 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
 
 --Player Variables
 local player = game.Players.LocalPlayer
@@ -28,8 +28,8 @@ local Window = Rayfield:CreateWindow({
       Note = "Join the discord for key (discord.gg/gTKwY3pZxJ)",
       FileName = "XYZKey",
       SaveKey = true,
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "XYZHubFREE"
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = "https://pastebin.com/raw/6ayTjic6"
    }
 })
 
@@ -44,16 +44,15 @@ if isfile("XYZSkriptzHub/Request"..game.PlaceId..".req") then
     end
 end
 
-Rayfield:Notify({
-   Title = "Uh Oh!",
-   Content = "You're not in one of our supported games, you got the default script. Suggest this game in the suggest tab.",
-   Duration = 6.5,
-   Image = 4483362458,
-   Actions = { -- Notification Buttons
-      Ignore = {
-         Name = "Okay!",
-   },
-},
+Window:Prompt({
+	Title = "Uh Oh!",
+	SubTitle = "Uh Oh!",
+	Content = "Looks like you're not in one of our supported games, we gave you the default script. Suggest this game in the suggestions tab.",
+	Actions = {
+		Accept = {
+			Name = 'Okay!',
+		}
+	}
 })
 
 local MainTab = Window:CreateTab("Main")
@@ -113,17 +112,6 @@ local SuggestButton = SuggestionsTab:CreateButton({
                         Body = game:GetService('HttpService'):JSONEncode({content = "(Anonymous Mode) A player suggested the game with a PlaceID of "..game.PlaceId})
                     }
                 );
-                Rayfield:Notify({
-                   Title = "Yay!",
-                   Content = "Suggestion was sent to the server.",
-                   Duration = 6.5,
-                   Image = 4483362458,
-                   Actions = { -- Notification Buttons
-                      Ignore = {
-                         Name = "Okay!",
-                   },
-                },
-                })
             else
                 suggested = true
                 writefile("XYZSkriptzHub/Request"..game.PlaceId..".req", "Request succsessfully sent to the server!")
@@ -137,30 +125,28 @@ local SuggestButton = SuggestionsTab:CreateButton({
                         Body = game:GetService('HttpService'):JSONEncode({content = player.Name.." suggested the game with a PlaceID of "..game.PlaceId})
                     }
                 );
-                Rayfield:Notify({
-                   Title = "Yay!",
-                   Content = "Suggestion was sent to the server.",
-                   Duration = 6.5,
-                   Image = 4483362458,
-                   Actions = { -- Notification Buttons
-                      Ignore = {
-                         Name = "Okay!",
-                   },
-                },
+                Window:Prompt({
+                	Title = "Yay!",
+                	SubTitle = "Yay!",
+                	Content = "Your suggestion was sent to the server.",
+                	Actions = {
+                		Accept = {
+                			Name = 'Okay!',
+                		}
+                	}
                 })
             end
         else
-            Rayfield:Notify({
-               Title = "Uh Oh!",
-               Content = "You already suggested this game, you can't suggest a game more than once.",
-               Duration = 6.5,
-               Image = 4483362458,
-               Actions = { -- Notification Buttons
-                  Ignore = {
-                     Name = "Okay!",
-               },
-            },
-            })
+            Window:Prompt({
+                	Title = "Uh Oh!",
+                	SubTitle = "Uh Oh!",
+                	Content = "You already suggested this game! You can't suggest a game twice.",
+                	Actions = {
+                		Accept = {
+                			Name = 'Okay!',
+                		}
+                	}
+                })
         end
    end,
 })
