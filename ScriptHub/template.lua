@@ -29,6 +29,14 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+local Tab = Window:CreateTab("Main") -- Title, Image
+local Section = Tab:CreateSection("Section Example")
+
+local CreditsTab = Window:CreateTab("Credits") -- Title, Image
+local CreditsSection = CreditsTab:CreateSection("Credits")
+local EdyLabel = CreditsTab:CreateLabel("by edy")
+local XYZLabel = CreditsTab:CreateLabel("from XYZSkriptz")
+
 Rayfield:LoadConfiguration()
 
 function AutoClicker()
