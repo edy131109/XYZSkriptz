@@ -8,6 +8,10 @@ elseif gameID == 11206345614 then
     loadstring(game:HttpGet("https://pastebin.com/raw/ru36ijUx"))()
 elseif gameID == 9984770240 then
     loadstring(game:HttpGet('https://pastebin.com/raw/eQvLuZrk'))()
+elseif gameID == 6403373529 then
+    loadstring(game:HttpGet('https://pastebin.com/raw/DYdjcK2h'))()
+elseif gameID == 8260276694 then
+    loadstring(game:HttpGet('https://pastebin.com/raw/dWeKg6kX'))()
 else
     loadstring(game:HttpGet("https://pastebin.com/raw/T921JXSw"))()
 end
