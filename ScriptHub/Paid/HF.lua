@@ -31,7 +31,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local WhiteList = {""}
+local WhiteList = {"edy131109", "songolo_master"}
 local player = game.Players.LocalPlayer.Name
 local whitelisted = false
 
