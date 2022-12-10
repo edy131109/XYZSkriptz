@@ -35,7 +35,7 @@ local WhiteList = {""}
 local player = game.Players.LocalPlayer.Name
 local whitelisted = false
 
-for i = 1, i < #WhiteList do
+for i = 1, #WhiteList do
    if WhileList[i] == player then
        whitelisted = true
    end
